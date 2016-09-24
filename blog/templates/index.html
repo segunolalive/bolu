@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include "jumbotron.html" %}
+<!-- search_form was included here -->
+  <div class="container">
+    <div class="row">
+
+    <div class="recent-articles col-sm-12">
+      <div class="">
+        <h1 id="page_title">{{page_title}}</h1>
+      </div>
+      {% for item in recent_articles %}
+          <div class="recent col-md-6">
+              <a id="recent_article_link" href="{{item.get_absolute_url}}">
+                {% if item.draft %}
+                <h3 style="color:red">Staff Only: Draft</h3>
+                {% endif %}
+                {% if item.published_date > timezone.now %}
+                <h3>Staff Only: Future Post</h3>
+                {% endif %}
+
+                <h3>{{item.title}}<small id="date"> {{item.published_date| timesince}} ago</small></h3>
+
+                {% if item.user.get_full_name%}
+                <p id="author">Author: {{item.user.get_full_name}}</p>
+                <hr>
+                {% endif %}
+                <blockquote cite="">
+                <p>{{item.content| safe | truncatewords:40}}</p>
+                </blockquote>
+              </a>
+            </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+{% endblock %}

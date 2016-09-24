@@ -1,0 +1,19 @@
+
+  <!-- <div class="container"> -->
+  <div class=" col-sm-6 search_form">
+    <form id="search" action="" method="GET" class="" role="search">
+      <div class="input-group">
+        <input class="form-control" type="text" name="q" placeholder="Search Articles" value="{{request.GET.q}}"/>
+        <span class="input-group-btn">
+          <input type="Submit" value="Search" class="btn btn-success"/>
+        </span>
+      </div>
+    </form>
+    {% if request.GET.q %}
+    <span class="current-items">
+      {{all_articles}} articles matching search
+    </span>
+    {% endif %}
+
+  </div>
+  <!-- </div> -->

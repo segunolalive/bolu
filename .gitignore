@@ -1,0 +1,7 @@
+*.pyc
+__pycache__
+boluenv/
+db.sqlite3
+media_cdn/
+
+.DS_Store

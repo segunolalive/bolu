@@ -1,0 +1,191 @@
+body {
+    background-color: #fafafa;
+    padding: 80px 0px;
+    border: 0px;
+    margin: 0px;
+}
+
+.custom-navbar {
+    height: 80px;
+}
+.navbar-collapse {
+
+}
+@media screen and (max-width: 767px) {
+  .navbar-collapse {
+    background-color: #32D282;
+  }
+}
+
+#corner-name {
+  font-family: 'Quicksand', sans-serif;
+  color: rgba(0, 200, 100, 0.8);
+}
+
+#corner-name:hover > a{
+  color: #ff0146;
+
+}
+
+a:hover{
+  text-decoration: none;
+}
+#article_link{
+  color: black;
+}
+
+.page-header {
+    background-color: rgb(0, 0, 0);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 10px;
+    padding-left: 20px;
+    border-bottom: 0;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    margin: 0;
+    font-size: 18pt;
+    text-decoration: none;
+}
+
+.jumbotron{
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    /*border-bottom: 3px solid rgba(30, 200, 40, 0.3);*/
+
+}
+
+.jumbotron h1 {
+  color: green;
+  font-size: 80px;
+  /*margin-top: 5px;*/
+  text-align: center;
+}
+
+
+#page_title{
+  text-align: center;
+  padding: 20px;
+}
+
+
+.separator {
+  width: 20%;
+}
+
+h1 small {
+  color: inherit;
+}
+
+.jumbotron p {
+  color: black;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+    /*color: #ff0146;*/
+    color: rgb(52, 186, 98);
+}
+
+.nav-links{
+  color: rgba(0, 200, 100, 0.8) !important;
+}
+@media screen and (max-width: 767px) {
+  .nav-links{
+    color: rgba(255, 255, 255, 1) !important;
+  }
+}
+
+.nav > li {
+  /*display: inline-block;*/
+  font-size: 15px;
+}
+
+
+.nav > li > a:link {
+    padding: 15px;
+    display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.nav >  li:hover > a{
+    color: #ff0146;
+    text-decoration: none;
+}
+
+.search_form{
+  padding-top: 18px;
+}
+
+.content{
+  margin-bottom: 50px;
+}
+
+
+footer {
+  width: 100%;
+  color: white;
+  background-color: rgba(0, 200, 100, 0.8);
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  padding: 10px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  position: fixed;
+}
+
+#date{
+  font-family:'Quicksand', sans-serif;
+  font-size: 12;
+  font-weight: bold;
+}
+
+.recent-articles {
+  background-color: #fff;
+}
+
+.recent h3{
+  text-align: center;
+}
+.recent p{
+  color: black;
+}
+
+#author{
+  text-align: center;
+}
+
+.current{
+  color: rgb(154, 148, 136);
+  font-variant: small-caps;
+}
+
+#search{
+  color: #337ab7;
+}
+
+
+ /*detail page*/
+.detail{
+  padding-bottom: 40px;
+}
+
+
+.full-image{
+  background-color: black;
+}
+
+.detail-image{
+  margin:auto;
+}
+.list-image{
+
+}

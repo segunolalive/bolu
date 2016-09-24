@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block head_title %}
+  {{page_title}} | {{block.super}}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-8">
+      <h1 id="page_title">{{page_title}}</h1>
+
+      {% for item in list %}
+        <div class="thumbnail">
+          <a id="article_link" href="{{item.get_absolute_url}}">
+            {% if item.image %}
+            <img src="{{item.image.url}}" alt="item.image.name" class="img-responsive list-image" />
+            {% endif %}
+            <div class="caption">
+            {% if item.draft %}
+            <h3 style="color:red">Staff Only: Draft</h3>
+            {% endif %}
+
+            {% if item.published_date > timezone.now %}
+            <h3>Staff Only: Future Post</h3>
+            {% endif %}
+
+            <h3>{{item.title}}</h3>
+            <p><small id="date">{{item.published_date| timesince}} ago</small></p>
+
+            {% if item.user.get_full_name%}
+            <p>Author: {{item.user.get_full_name}}</p>
+            {% endif %}
+
+            <p>{{item.content| safe | truncatewords:40}}</p>
+          </a>
+          </div>
+        </div>
+        <hr>
+      {% endfor %}
+    </div>
+
+
+  <div class="col-md-8 col-md-offset-2">
+
+  <div class="pagination">
+      <span class="step-links">
+          {% if list.has_previous %}
+              <!--<a href="?page={{ list.previous_page_number }}">previous</a>-->
+              <a href="?{{page_request_var}}={{ list.previous_page_number }}
+              {% if request.GET.q %}
+              &q={{request.GET.q}}
+              {% endif %}"
+              class="btn btn-success" role="button">
+              Previous Page</a>
+          {% endif %}
+
+          <span class="current-items">
+              Page {{ list.number }} of {{ list.paginator.num_pages }} Showing
+              item {{list.start_index}} to {{list.end_index}} of {{all_articles}}
+          </span>
+          <span>
+          {% if list.has_next %}
+            <!--<a href="?page={{ list.next_page_number }}">next</a>-->
+            <a href="?{{page_request_var}}={{ list.next_page_number }}
+            {% if request.GET.q %}
+            &q={{request.GET.q}}
+            {% endif %}"
+            class="btn btn-success" role="button">
+            Next Page</a>
+          {% endif %}
+        </span>
+
+    </div>
+  </div>
+  {% include 'year_archive.html' %}
+  </div>
+</div>
+{% endblock content %}
