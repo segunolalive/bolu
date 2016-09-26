@@ -51,7 +51,7 @@ class Post(models.Model):
         if self.image:
             size = (300, 300)
             image_path = str(self.image.path)
-            im = Image.open(image_path)
+            im = Image.open(size)
             im.thumbnail(medium_size)
             original_image_full_path = os.path.join(BASE_DIR, self.image.path)
             os.remove(original_image_full_path)

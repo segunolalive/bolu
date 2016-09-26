@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content  %}
-  <div class="col-md-8 col-sm-offset-2 detail">
+  <div class="col-md-7 col-md-offset-1 detail">
   <div class="thumbnail">
     <div class="caption">
 
@@ -17,12 +17,18 @@
     </div>
     {% endif %}
 
-      <h1>{{instance.title}}
-        {% if instance.draft %}<span style="color:red">This is a Draft</span>{% endif %}<small id="date">{{instance.published_date | timesince}}</small></h1>
+      <div class="">
+        <h1>{{instance.title}}
+          {% if instance.draft %}
+          <span style="color:red">This is a Draft</span>
+          {% endif %}
+          <span><small id="date">{{instance.published_date | timesince}}</small></span>
+        </h1>
 
-      {% if instance.user.get_full_name%}
-      <p>Author: {{instance.user.get_full_name}}</p>
-      {% endif %}
+        {% if instance.user.get_full_name%}
+        <p>Author: {{instance.user.get_full_name}}</p>
+        {% endif %}
+      </div>
 
       {% if instance.image %}
       <div class="full-image">

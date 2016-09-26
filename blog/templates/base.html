@@ -2,10 +2,13 @@
 {% load static from staticfiles %}
 <html>
   <head>
-    <title>{% block head_title %}Bolu Ola{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- local bootstrap. To be removed before pushing -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -18,6 +21,7 @@
 
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 
+    <title>{% block head_title %}Bolu Ola{% endblock %}</title>
   </head>
 
   <body>
@@ -70,7 +74,7 @@
 
   <footer class="footer">
     <p class="text-muted"><small id="copyright">
-      © copyright Bolu Ola 2016
+      © copyright Bolu Ola {% now "Y" %}.
     </small></p>
   </footer>
 
@@ -81,6 +85,5 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/collapse.js' %}"></script>
 </body>
 </html>
